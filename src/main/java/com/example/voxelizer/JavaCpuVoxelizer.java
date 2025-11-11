@@ -201,17 +201,6 @@ public final class JavaCpuVoxelizer {
         if (verbose) System.out.println("[Write] " + jsonOut.getName() +
                 " (voxels=" + xyzi.length() + ", colors=" + colorToIndex.size() + ")");
 
-        // position file
-        File posOut = new File(outDir, base + "_position.json");
-        JSONArray arr = new JSONArray();
-        JSONObject pos = new JSONObject();
-        pos.put("translation", new JSONArray(new int[]{ox, oy, oz}));
-        pos.put("origin", new JSONArray(new int[]{0, 0, 0}));
-        arr.put(pos);
-        try (FileWriter fw = new FileWriter(posOut)) { fw.write(arr.toString()); }
-        if (verbose) System.out.println("[Write] " + posOut.getName() +
-                "  translation=["+ox+","+oy+","+oz+"] origin=[0,0,0]");
-
         return new Stats(base, grid, triCount, filled, ox, oy, oz);
     }
 

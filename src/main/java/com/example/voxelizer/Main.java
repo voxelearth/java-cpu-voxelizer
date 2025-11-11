@@ -92,8 +92,8 @@ public class Main {
                 totalFilled += stats.filled;
                 System.out.printf("[OK] %-40s  tris=%d  filled=%d  time=%.1f ms%n",
                         f.getName(), stats.triangles, stats.filled, (t1 - t0) / 1e6);
-                System.out.printf("     → %s_%d.json, %s_position.json%n",
-                        stats.baseName, grid, stats.baseName);
+                System.out.printf("     → %s_%d.json%n",
+                        stats.baseName, grid);
             }
             long t1All = System.nanoTime();
             System.out.printf("[ALL DONE] files=%d filled_total=%d time=%.1f ms%n",
